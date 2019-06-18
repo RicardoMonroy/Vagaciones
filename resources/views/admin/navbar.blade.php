@@ -11,6 +11,8 @@
             <a class="navbar-brand" href="javascript:void(0)">
                 {{ Request::is('home*') ? 'DASHBOARD' : '' }}
                 {{ Request::is('roles*') ? 'ROLES' : '' }}
+                {{ Request::is('users*') ? 'USUARIOS' : '' }}
+                {{ Request::is('permission*') ? 'PERMISOS' : '' }}
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">

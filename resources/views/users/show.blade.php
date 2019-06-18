@@ -13,14 +13,14 @@
             Ver Usuario
         </li>
         <!-- Breadcrumb Menu-->
-        <li class="breadcrumb-menu d-md-down-none">
+        {{-- <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group">
             @can('users.create')
                 <a class="btn" href="{{ route('users.create') }}">
                     <i class="icon-plus"></i> Crear</a>
             @endcan
         </div>
-        </li>
+        </li> --}}
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -28,7 +28,10 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            Crear
+                            @can('users.create')
+                                <a class="btn" href="{{ route('users.create') }}">
+                                    <i class="icon-plus"></i> Crear</a>
+                            @endcan
                         </div>
                         <div class="card-body">
                             <p><strong>Nombre</strong>     {{ $user->name }}</p>

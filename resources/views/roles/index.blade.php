@@ -10,14 +10,14 @@
         Roles
     </li>
     <!-- Breadcrumb Menu-->
-    <li class="breadcrumb-menu d-md-down-none">
+    {{-- <li class="breadcrumb-menu d-md-down-none">
     <div class="btn-group" role="group" aria-label="Button group">
         @can('roles.create')
             <a class="btn" href="{{ route('roles.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
     </div>
-    </li>
+    </li> --}}
 </ol>
 <div class="container-fluid">
     <div class="animated fadeIn">
@@ -33,7 +33,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Roles
+                        @can('roles.create')
+                            <a class="btn" href="{{ route('roles.create') }}">
+                                <i class="icon-plus"></i> Crear</a>
+                        @endcan
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
@@ -54,7 +57,7 @@
                                             <div class="btn-group" role="group" aria-label="Button group">
                                                 <a href="{{ route('roles.show', $role->id) }}"
                                                     class="btn btn-sm btn-primary">
-                                                    <i class="icon-eye"></i></a>
+                                                    <i class="tim-icons icon-zoom-split"></i></a>
                                             </div>
                                         </td>
                                     @endcan
@@ -63,7 +66,7 @@
                                             <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
                                                 <a href="{{ route('roles.edit', $role->id) }}"
                                                     class="btn btn-sm btn-success">
-                                                    <i class="icon-pencil"></i></a>
+                                                    <i class="tim-icons icon-pencil"></i></a>
                                             </div>
                                         </td>
                                     @endcan
@@ -73,7 +76,7 @@
                                                 {!! Form::open(['route' => ['roles.destroy', $role->id],
                                                 'method' => 'DELETE']) !!}
                                                 <button class="btn btn-sm btn-danger">
-                                                    <i class="icon-close"></i>
+                                                    <i class="tim-icons icon-trash-simple"></i>
                                                 </button>
                                                 {!! Form::close() !!}
                                             </div>
